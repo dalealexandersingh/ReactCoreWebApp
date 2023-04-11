@@ -11276,7 +11276,7 @@
 			try {
 				return JSON.parse(
 					(settings.iStateDuration === -1 ? sessionStorage : localStorage).getItem(
-						'DataTables_'+settings.sInstance+'_'+location.pathname
+						'DataTables_'+settings.sInstance+'_'+ window.location.pathname
 					)
 				);
 			} catch (e) {
@@ -11379,7 +11379,7 @@
 		"fnStateSaveCallback": function ( settings, data ) {
 			try {
 				(settings.iStateDuration === -1 ? sessionStorage : localStorage).setItem(
-					'DataTables_'+settings.sInstance+'_'+location.pathname,
+					'DataTables_'+settings.sInstance+'_'+ window.location.pathname,
 					JSON.stringify( data )
 				);
 			} catch (e) {}
